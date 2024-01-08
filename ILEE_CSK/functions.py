@@ -916,6 +916,7 @@ def anisotropy_3d_internal(shape, adj,point_list, radius, box_size):
                                 continue
                             '''
                             # L2 norm
+                            gradient = gradient.astype(float) 
                             gradient = gradient / np.linalg.norm(gradient)
                             gradient1 = gradient.reshape(-1, 1)
                             tensor = np.outer(gradient, gradient1)
